@@ -3,14 +3,13 @@ const pool = require('./db/pool')
 
 const app = express()
 
-
 app.get('/', (req, res) => {
   res.send('HELLO')
 })
 
 app.get('/item', async (req, res) => {
   const [results] = await pool.query('select * from item');
-  console.log(results);
+  console.log('results:', results);
   res.send('Hang on Cat')
 })
 
