@@ -1,7 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const pool = require('./db/pool')
 
 const app = express()
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('HELLO')
