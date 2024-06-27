@@ -9,8 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/item', async (req, res) => {
   const [results] = await pool.query('select * from item');
-  console.log('results:', results);
-  res.send('Hang on Cat')
+  res.json(results)
 })
 
 const port = 5000;
